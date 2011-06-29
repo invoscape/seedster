@@ -1,0 +1,9 @@
+Description:
+    This generator creates the files and folders needed for seedster
+
+Example:
+    rails generate seedster settings
+
+    This will create:
+        create 'db/seedster'
+        create 'db/seedster/datasets.yml'
