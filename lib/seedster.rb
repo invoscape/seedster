@@ -86,6 +86,16 @@ class SeedSter
     
     public
     def load(data_set, dump_version, is_load_to_be_appended = false)
+        #--- Check if Rails environment is production
+        if Rails.env == :production.to_s
+            puts
+            STDOUT.print "You are in production environment. Loading the dump will make you lose all the current production data. Are you sure you still want to proceed? (y/n) "
+            input = STDIN.gets.strip
+            if input == 'n' or input == 'N'
+                exit
+            end
+        end
+        
         #--- Prepare the version number according to folder name
         dump_version = dump_version.to_s.rjust(4, '0') if dump_version != nil
         

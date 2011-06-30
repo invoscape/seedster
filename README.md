@@ -55,6 +55,11 @@ Seedster exposes few rake commands to help you dump and load data to the databas
 	
 	rake db:seedster:load[dataset_name,1]
 	This command will load the version 1 of the database under "[dataset_name]" folder
+	
++	To use in production mode
+
+	rake db:seedster:dump[dataset_name] RAILS_ENV=production
+	rake db:seedster:load[dataset_name,version] RAILS_ENV=production	
 		
 __Home page__ - [invoscape.com/open_source#seedster](http://www.invoscape.com/open_source#seedster)
 
