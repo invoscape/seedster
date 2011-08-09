@@ -144,7 +144,7 @@ class SeedSter
         #--- Prepare the tables that have been dumped
         tables_already_dumped = []
         Dir.foreach(dump_folder_path) do |entry|
-            if entry != "." and entry != ".."
+            if entry.end_with?(".yml")
                 tables_already_dumped.push(entry.gsub(".yml",""))
             end
         end

@@ -34,6 +34,10 @@ Seedster exposes few rake commands to help you dump and load data to the databas
 	This will create a folder named "all" under the "seedster" folder under which another folder named version_an_optional_comment_[current_date]_[current_time] within which all the yaml files
 	corresponding to all the tables in the database will be created.
 	
+	OR just
+	rake db:seedster:dump
+	This will create a dump of the entire database without any comment
+	
 +	To dump a specific dataset
 
 	rake db:seedster:dump[dataset_name,"An optional comment"]  
@@ -47,6 +51,10 @@ Seedster exposes few rake commands to help you dump and load data to the databas
 	
 	rake db:seedster:load[:all,1]
 	This command will load the version 1 of the database under "all" folder
+	
+	OR just
+	rake db:seedster:load
+	This will load the latest version of the entire database under "all" folder
 	
 +	To load a specific dataset
 
